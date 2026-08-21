@@ -1,20 +1,13 @@
-import { Routes, Route } from 'react-router-dom'
-import { About, Ecosystem, Intro } from './_root'
+import Story from "./components/Story";
+import Showcase from "./components/Showcase";
+import Finale from "./components/Finale";
 
-
-function App() {
+export default function App() {
   return (
-    <>
-    <Routes >
-      {/**private routes */}
-
-      {/**Public routes */}
-      <Route path="/" element={<Intro />} />
-      <Route path='/ecosystem' element={<Ecosystem/>} />
-      <Route path="/about" element={<About />} />
-    </Routes>
-    </>
-  )
+    <main id="top">
+      <Story />
+      <Showcase />
+      <Finale />
+    </main>
+  );
 }
-
-export default App

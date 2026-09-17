@@ -51,7 +51,7 @@
 }
 
 .showcase__can {
-  width: clamp(84px, 11vw, 140px);
+  width: clamp(214px, 11vw, 140px);
   filter: drop-shadow(0 18px 18px rgba(27, 14, 77, 0.18));
 }
 
@@ -81,4 +81,290 @@
     grid-template-columns: repeat(2, 1fr);
     row-gap: 48px;
   }
+}
+
+
+```css
+/* ================================
+   SHOWCASE CARDS
+================================ */
+
+.showcase__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.showcase__card:hover {
+  transform: translateY(-8px);
+}
+
+.showcase__card:focus-visible {
+  outline: 3px solid var(--amber-deep);
+  outline-offset: 8px;
+  border-radius: 12px;
+}
+
+.showcase__card:active {
+  transform: translateY(-4px) scale(0.99);
+}
+
+
+/* ================================
+   OUT OF STOCK LABEL
+================================ */
+
+.showcase__stock {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  background: rgba(27, 14, 77, 0.08);
+  color: var(--navy);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.showcase__card:hover .showcase__stock {
+  background: var(--navy);
+  color: white;
+}
+
+
+/* ================================
+   WAITLIST MODAL
+================================ */
+
+.waitlist-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(27, 14, 77, 0.55);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  animation: waitlistOverlayIn 0.25s ease forwards;
+}
+
+
+/* ================================
+   MODAL CONTENT
+================================ */
+
+.waitlist-modal__content {
+  position: relative;
+
+  width: min(100%, 480px);
+
+  padding: clamp(30px, 6vw, 48px);
+
+  background: var(--pink-soft);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 30px 80px rgba(27, 14, 77, 0.28),
+    0 8px 24px rgba(27, 14, 77, 0.12);
+
+  text-align: center;
+
+  animation: waitlistModalIn 0.35s cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
+}
+
+
+/* ================================
+   CLOSE BUTTON
+================================ */
+
+.waitlist-modal__close {
+  position: absolute;
+
+  top: 16px;
+  right: 16px;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(27, 14, 77, 0.07);
+
+  color: var(--navy);
+
+  font-size: 1.4rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.waitlist-modal__close:hover {
+  background: rgba(27, 14, 77, 0.14);
+  transform: rotate(90deg);
+}
+
+
+/* ================================
+   MODAL ICON
+================================ */
+
+.waitlist-modal__icon {
+  width: 64px;
+  height: 64px;
+
+  margin: 0 auto 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--navy);
+  color: white;
+
+  font-size: 1.5rem;
+
+  box-shadow: 0 12px 30px rgba(27, 14, 77, 0.2);
+}
+
+
+/* ================================
+   MODAL TEXT
+================================ */
+
+.waitlist-modal__eyebrow {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--amber-deep);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.waitlist-modal__title {
+  margin: 0;
+
+  color: var(--navy);
+
+  font-size: clamp(1.7rem, 5vw, 2.4rem);
+
+  line-height: 1.05;
+}
+
+.waitlist-modal__size {
+  margin: 12px 0 0;
+
+  color: var(--navy);
+
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.waitlist-modal__copy {
+  max-width: 360px;
+
+  margin: 18px auto 28px;
+
+  color: rgba(27, 14, 77, 0.68);
+
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+
+/* ================================
+   WAITLIST BUTTON
+================================ */
+
+.waitlist-modal__button {
+  width: 100%;
+
+  min-height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 999px;
+
+  background: var(--navy);
+  color: white;
+
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.waitlist-modal__button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 28px rgba(27, 14, 77, 0.22);
+}
+
+.waitlist-modal__button:active {
+  transform: translateY(0);
+}
+
+
+/* ================================
+   SECONDARY ACTION
+================================ */
+
+.waitlist-modal__secondary {
+  margin-top: 14px;
+
+  border: none;
+  background: transparent;
+
+  color: rgba(27, 14, 77, 0.58);
 }

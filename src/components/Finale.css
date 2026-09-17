@@ -141,3 +141,8 @@
   right: 12%;
   transform: translateY(60px) rotate(10deg);
 }
+
+.free
+{
+  width: 50%;
+}

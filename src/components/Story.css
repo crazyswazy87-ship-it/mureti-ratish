@@ -181,7 +181,7 @@
 
 .story__can {
   position: absolute;
-  width: clamp(140px, 16vw, 220px);
+  width: clamp(190px, 16vw, 220px);
   z-index: 15;
   filter: drop-shadow(0 30px 30px rgba(0, 0, 0, 0.35));
 }

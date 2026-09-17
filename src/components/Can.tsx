@@ -1,17 +1,18 @@
 import type { Flavor } from "../data/flavors";
-import bottleImage from "../../public/assets/images/mureti-ratish-bottle.png";
+import "./Can.css";
+
 interface CanProps {
   flavor: Flavor;
-  className?: string;
 }
 
-export default function Can({ flavor, className }: CanProps) {
+export default function Can({ flavor }: CanProps) {
   return (
-    <img
-      src={bottleImage}
-      alt={`${flavor.name.replace("\n", " ")} traditional brew`}
-      className={className}
-      draggable={false}
-    />
+    <div className="can">
+      <img
+        src={flavor.image}
+        alt={`${flavor.litres} litre ${flavor.name.replace("\n", " ")}`}
+        className="can__image"
+      />
+    </div>
   );
 }

@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import { flavors } from "../data/flavors";
 import { tornEdgeClipPath } from "../utils/tornEdge";
 import "./Finale.css";
+import delivery from "../../public/assets/images/deliveryy.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,6 +56,11 @@ export default function Finale() {
         </div>
 
         <div className="finale__content">
+          <img 
+            src={delivery}
+            alt="Free Delivery"
+            className="free"
+          />
           <h2 className="finale__title">Get refreshed.</h2>
           <p className="finale__copy">
             Join the list for fresh Muratina drops, new sizes, and the good stuff
@@ -74,7 +80,7 @@ export default function Finale() {
           </form>
 
           <div className="finale__footer">
-            <span>© {new Date().getFullYear()} Mureti &amp; Ratish</span>
+            <span>© {new Date().getFullYear()} Jerrys &amp; Ratish</span>
             <div className="finale__footer-links">
               <a href="#about">About</a>
               <a href="#showcase">Categories</a>

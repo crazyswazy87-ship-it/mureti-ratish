@@ -32,7 +32,7 @@ export default function Navbar({ tone }: NavbarProps) {
             fill="currentColor"
             letterSpacing="1"
           >
-              MURETI
+              JERRYS
           </text>
           <circle cx="34" cy="46" r="3.4" fill="currentColor" />
           <circle cx="56" cy="46" r="3.4" fill="currentColor" />

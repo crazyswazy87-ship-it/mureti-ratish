@@ -28,7 +28,7 @@ export const flavors: Flavor[] = [
     metal: "#e7e59a",
     bandTop: "#2c1a7a",
     bandBottom: "#e7e59a",
-    ink: "#2c1a7a",
+    ink: "#351d9f",
     blob: "#f2c94c",
     accent: "#c23fd6",
     accent2: "#38d9c8",

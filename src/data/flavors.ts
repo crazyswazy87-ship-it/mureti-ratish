@@ -4,9 +4,10 @@ export interface Flavor {
   litres: number;
   price: number;
   image: string;
+  inStock: boolean;
+
   metal: string;
   bandTop: string;
-  inStock:boolean;
   bandBottom: string;
   ink: string;
   blob: string;
